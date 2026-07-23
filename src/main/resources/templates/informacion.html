@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Información Trabajador</title>
+</head>
+<body>
+
+<h1>Información del trabajador</h1>
+
+<p>ID:</p>
+<p th:text="${trabajador.id}"></p>
+
+<p>Nombres:</p>
+<p th:text="${trabajador.nombres}"></p>
+
+<p>Apellidos:</p>
+<p th:text="${trabajador.apellidos}"></p>
+
+<p>Cargo:</p>
+<p th:text="${trabajador.cargo}"></p>
+
+<p>Salario:</p>
+<p th:text="${trabajador.salario}"></p>
+
+<p>Estado:</p>
+<p th:text="${trabajador.estado}"></p>
+
+</body>
+</html>

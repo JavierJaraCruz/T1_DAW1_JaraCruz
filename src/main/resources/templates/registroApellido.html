@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro Trabajador</title>
+</head>
+<body>
+
+<h1>Formulario de registro de trabajadores</h1>
+
+<form th:action="@{${ruta}}" th:object="${trabajador}" method="post">
+
+    <p>ID:</p>
+    <input type="text" th:field="*{id}" readonly><br>
+
+    <p>Nombres:</p>
+    <input type="text" th:field="*{nombres}" required><br>
+
+    <p>Apellidos:</p>
+    <input type="text" th:field="*{apellidos}" required><br>
+
+    <p>Cargo:</p>
+    <input type="text" th:field="*{cargo}" required><br>
+
+    <p>Salario:</p>
+    <input type="number" step="0.01" th:field="*{salario}" required><br>
+
+    <p>Estado:</p>
+    <input type="text" th:field="*{estado}" required><br>
+
+    <br>
+
+    <button type="submit">Guardar</button>
+
+</form>
+
+</body>
+</html>

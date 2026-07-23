@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Trabajadores</title>
+</head>
+<body>
+
+<h1>Lista de Trabajadores</h1>
+
+<a href="/trabajadores/registroApellido">
+    Registrar trabajador
+</a>
+
+<br><br>
+
+<table>
+
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>Cargo</th>
+        <th>Salario</th>
+        <th>Estado</th>
+        <th>Acciones</th>
+    </tr>
+    </thead>
+
+
+    <tbody>
+
+    <tr th:each="trabajador : ${trabajadores}">
+
+        <td th:text="${trabajador.id}"></td>
+        <td th:text="${trabajador.nombres}"></td>
+        <td th:text="${trabajador.apellidos}"></td>
+        <td th:text="${trabajador.cargo}"></td>
+        <td th:text="${trabajador.salario}"></td>
+        <td th:text="${trabajador.estado}"></td>
+
+
+        <td>
+
+            <form th:action="@{/trabajadores/eliminar/{id}(id=${trabajador.id})}" method="post">
+                <button type="submit">
+                    Eliminar
+                </button>
+            </form>
+
+
+            <a th:href="@{/trabajadores/registroApellido/{id}(id=${trabajador.id})}">
+                Actualizar
+            </a>
+
+        </td>
+
+    </tr>
+
+    </tbody>
+
+
+</table>
+
+</body>
+</html>
